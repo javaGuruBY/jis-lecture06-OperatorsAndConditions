@@ -150,5 +150,17 @@ public class IfElse {
             //do stuff
         }
     }
+
+    @Test
+    public void goodPractice() {
+        int age = 35;
+        if (isWorkingAge(age)) {
+            // do some work
+        }
+    }
+    private boolean isWorkingAge(int age) {
+        if (age > 16 && age < 60) return true;
+        return false;
+    }
 }
 
