@@ -92,15 +92,21 @@ public class IfElse {
         } else if (second) {
             result = "second";
         }
-        if(first) result = "first"; else result = "second";
-        if(first) result = "first"; else if (second) result = "second"; else result = "default";
+        if (first) result = "first";
+        else result = "second";
+        if (first) result = "first";
+        else if (second) result = "second";
+        else result = "default";
 
-        if(first); else;
-        if(first);
-        if(first); else System.out.println("hello");
-        if(first) System.out.println("hello"); else ;
+        if (first) ;
+        else ;
+        if (first) ;
+        if (first) ;
+        else System.out.println("hello");
+        if (first) System.out.println("hello");
+        else ;
 
-        if(first);
+        if (first) ;
         else System.out.println("hello");
     }
 
@@ -108,15 +114,16 @@ public class IfElse {
     public void assignment() {
         boolean first = false;
         String result = "initial";
-        if(first = true) {
+        if (first = true) {
             result = "first";
         }
         assertEquals("first", result);
     }
+
     @Test // дикая дикость, не делайте так
     public void conditionAssignmentBad() {
         String result = null;
-        if((result = getName()) != null) {
+        if ((result = getName()) != null) {
             result = "first";
         }
         assertEquals("first", result);
@@ -125,7 +132,7 @@ public class IfElse {
     @Test // делайте так
     public void conditionAssignmentFine() {
         String result = getName();
-        if(result != null) {
+        if (result != null) {
             result = "first";
         }
         assertEquals("first", result);
@@ -139,14 +146,14 @@ public class IfElse {
     public void goodStyle() {
         //smells
         boolean flag = false;
-        if(flag) {
+        if (flag) {
             //do nothing
         } else {
             // do stuff
         }
 
         // use negation
-        if(!flag) {
+        if (!flag) {
             //do stuff
         }
     }
@@ -158,9 +165,20 @@ public class IfElse {
             // do some work
         }
     }
+
     private boolean isWorkingAge(int age) {
         if (age > 16 && age < 60) return true;
         return false;
+    }
+
+    @Test
+    public void practice() {
+        int age = 35;
+        if (age > 18) {
+            // do some work
+        } else if (age < 60) {
+            // never executed
+        }
     }
 }
 
